@@ -1,0 +1,98 @@
+extend includes/base
+
+block header
+	- 	
+		title = 'Category'
+		login = 'Michal'
+	
+block content 
+	section.breadcrumb
+		a(href="../") Home
+		a(href="../") Men
+	section.categories
+		-
+			var categoryCoats = [
+				{
+					category: 'Coats'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				}
+			]
+
+		-
+			var categoryOuterwear = [
+				{
+					category: 'Outerwear'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				}
+			]
+		-
+			var categoryTshirts = [
+				{
+					category: 'T-shirts'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				},
+				{
+					name:'Double-Layered Top',
+					price:'€ 89,95'
+				}
+			]								
+		mixin addProducts(arr)
+			div
+				each item in arr
+					if (item.category)
+						h2=item.category
+						a(href="#").more show more
+
+				div.products
+					each item in arr
+						if (item.name)
+							div.product
+								img
+								h4=item.name
+								h5=item.price
+						
+		+addProducts(categoryCoats)
+		+addProducts(categoryOuterwear)
+		+addProducts(categoryTshirts)
+block footer

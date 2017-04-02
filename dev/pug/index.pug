@@ -1,0 +1,65 @@
+extend includes/base
+
+block header
+	- 
+		title = 'Home page'
+		bodyClass ="home"
+	
+block content 
+	section.head
+		h1 Hazy Shade of spring
+		h3 Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.
+		a.button(href="#") check new arrivals
+	section.squares
+		//- 1
+		div
+			div.ligth-grey.height-2x
+				h4 HEATHER GREY BASICS
+				h5 New Arrival
+			div.grey.empty
+
+		//- 2
+		div
+			div.dark-grey
+				.icon.tw 
+				h5.small Opening Ceremony @IndonesiaFW tomorrow, PMers! Are you ready for the biggest fashion movement in Indonesia? #infoPM pic.twitter.com/3VQvwt4diJ
+				h6 @PuspitaMarthaID
+			
+			div.grey
+				h4 chuck taylors
+				h5 $125.00
+			div.darken-grey
+				.icon.arr
+				h4 Jaxon Hat
+				h5 Beanie Hat
+
+		//- 3
+		div
+			div.ligth-grey.empty
+			div.dark-grey
+				.icon.tw 
+				h5.small Girls, Girls, Girls: A Look Back at 50 Years of the Pirelli Calendar
+				h6 @Vogue
+			div.grey
+				h4 basic blazer
+				h5 from $199.00
+
+		//- 4
+		div
+
+			div.darken-grey
+				.icon.arr
+				h4 elegant shoes
+				h5 BRAIDED LEATHER
+			div.ligth-grey.height-2x
+				h4 jeans for ADVENTURE
+				h5 New Arrival
+		
+		
+	section.sign-up.padding-block
+		h2 sign up to receive our updates
+		h3 Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat.
+		form.add-mail
+			input(type="email", placeholder="Your e-mail")
+			input(type="submit", value="add")
+block footer

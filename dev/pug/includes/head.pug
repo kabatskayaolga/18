@@ -1,0 +1,72 @@
+-
+	var title, bodyClass, login
+
+doctype html
+html
+	head
+		block header
+		meta(charset="utf-8")
+		if title
+			title #{title}
+		else
+			title default
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		link(rel="stylesheet", href="css/style.css")
+	body(class=bodyClass)
+		.wrapper
+			header
+				div
+					a.logo(href="#") sh
+					nav
+						mixin link(href, name)
+							a(href=href)= name
+						- 
+							var navLinks = [
+								{
+									href:'#',
+									name:'Woman'
+								},
+								{
+									href:'/category.html',
+									name:'Men'
+								},
+								{
+									href:'#',
+									name:'Kids'
+								},
+								{
+									href:'#',
+									name:'Comming Soon'
+								},
+								{
+									href:'#',
+									name:'About'
+								}
+							]
+						each item in navLinks
+							+link(item.href,item.name)
+				div
+					//- LOGIN
+
+					if login
+						span.login.icon Hi, #{login} (
+							a(href="#") logout
+							| )
+					else
+						span.login.icon 
+							a(href="#") Log In
+					
+					//- BASKES
+
+					if basket
+						span.basket.icon Basket #{basket}
+					else
+						span.basket.icon Basket (0)
+					
+					button.search-button-open
+					form.search-form
+						input(type="text", placeholder="Search something...")
+						input(type="submit")
+
+			block content
+			include footer
